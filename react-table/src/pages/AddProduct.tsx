@@ -1,9 +1,7 @@
 import React from 'react';
 
-const AddProduct = () => {
-    return(
-        <div> it is addproduct</div>
-    )
-}
+const AddProduct = function () {
+  return (<div> it is addproduct</div>);
+};
 
 export default AddProduct;

@@ -1,7 +1,6 @@
 module.exports = {
   env: {
     browser: true,
-    es2016: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -21,5 +20,6 @@ module.exports = {
   ],
   rules: {
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'linebreak-style': 0,
   },
 };
