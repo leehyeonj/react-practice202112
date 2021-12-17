@@ -5,8 +5,8 @@ import { rows } from "../data/rows";
 import { Box, Button, Stack } from "@mui/material";
 
 export default function Incomplete() {
-  const columnData = useMemo(() => columns, [columns]);
-  const rowData = useMemo(() => rows, [rows]);
+  const columnData = useMemo(() => columns, []);
+  const rowData = useMemo(() => rows, []);
   const [selectionModel, setSelectionModel] = useState([]);
   const [isSelected, setIsSelected] = useState(false);
 

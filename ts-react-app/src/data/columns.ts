@@ -1,3 +1,4 @@
+//it is for mui data grid
 export const columns = [
   { field: "id", headerName: "ID", width: 90 },
   {
