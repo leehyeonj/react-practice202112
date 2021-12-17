@@ -5,6 +5,7 @@ import { data } from "../data/data";
 import { css } from "@emotion/react";
 import { reactTableColumn } from "../data/reactTableColumn";
 import { rows } from "../data/rows";
+import { Box, Button, Stack } from "@mui/material";
 
 const tableStyle = css`
   border-spacing: 0;
@@ -64,6 +65,8 @@ function Table({ columns, data }) {
     rows,
     prepareRow,
     selectedFlatRows,
+    allColumns,
+    getToggleHideAllColumnsProps,
     state: { selectedRowIds },
   } = useTable(
     {
@@ -99,9 +102,26 @@ function Table({ columns, data }) {
     }
   );
 
+  console.log(selectedFlatRows);
+
   // Render the UI for your table
   return (
     <>
+      <div>
+        <div>
+          <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} /> Toggle
+          All
+        </div>
+        {allColumns.map((column) => (
+          <div key={column.id}>
+            <label>
+              <input type="checkbox" {...column.getToggleHiddenProps()} />{" "}
+              {column.id}
+            </label>
+          </div>
+        ))}
+        <br />
+      </div>
       <table {...getTableProps()} css={tableStyle}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -135,6 +155,11 @@ const Receiving = () => {
   return (
     <div>
       <h2>react table 사용</h2>
+      <Stack spacing={1} direction="row">
+        <Button variant="contained">사입요청하기</Button>
+        <Button variant="contained">사입요청하기</Button>
+        <Button variant="contained">사입요청하기</Button>
+      </Stack>
       <Table columns={reactTableColumn} data={rows} />
     </div>
   );
