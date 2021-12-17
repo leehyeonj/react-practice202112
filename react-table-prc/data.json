@@ -1,0 +1,15 @@
+{
+  "store" : [
+    {
+      "sellerId" : "joliestore",
+      "seller" : "김다은",
+      "SKU" : 10,
+      "building" : "디오트",
+      "wholesaleName" : "수작",
+      "wholesaleAddress" : "지하1_303호",
+      "phoneNumber" : "01076623484",
+      "wholesaleProduct" : "챔피온구제맨투맨",
+      "id" : 1
+    }
+  ]
+}
