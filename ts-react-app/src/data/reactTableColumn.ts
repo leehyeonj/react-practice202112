@@ -83,7 +83,7 @@ export const reactTableColumn = [
   },
   {
     Header: "오더 수",
-    accessor: "OrderAmount",
+    accessor: "orderAmount",
   },
   {
     Header: "입고 수",

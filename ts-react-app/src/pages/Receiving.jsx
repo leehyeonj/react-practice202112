@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTable, useRowSelect } from "react-table";
 import { data } from "../data/data";
 /** @jsxImportSource @emotion/react */
@@ -31,7 +31,7 @@ const tableStyle = css`
 `;
 
 const IndeterminateCheckbox = React.forwardRef(
-  ({ indeterminate, ...rest }, ref) => {
+  ({ row, indeterminate, ...rest }, ref) => {
     const defaultRef = React.useRef();
     const resolvedRef = ref || defaultRef;
 
@@ -39,9 +39,17 @@ const IndeterminateCheckbox = React.forwardRef(
       resolvedRef.current.indeterminate = indeterminate;
     }, [resolvedRef, indeterminate]);
 
+    const [isTrue, setIsTrue] = useState(false);
+    // const isDisabled = row.orginal.orderAmount > 1;
+
+    useEffect(() => {
+      if (row?.values?.orderAmount < 2) {
+        setIsTrue(true);
+      }
+    }, [row]);
     return (
       <>
-        <input type="checkbox" ref={resolvedRef} {...rest} />
+        <input type="checkbox" ref={resolvedRef} {...rest} disabled={isTrue} />
       </>
     );
   }
@@ -79,7 +87,10 @@ function Table({ columns, data }) {
           // to the render a checkbox
           Cell: ({ row }) => (
             <div>
-              <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />
+              <IndeterminateCheckbox
+                {...row.getToggleRowSelectedProps()}
+                row={row}
+              />
             </div>
           ),
         },
