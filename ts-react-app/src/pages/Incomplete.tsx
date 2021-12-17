@@ -13,6 +13,7 @@ export default function Incomplete() {
   return (
     <>
       <div style={{ height: 400, width: "100%" }}>
+        <h2>mui data grid 사용</h2>
         <Stack spacing={1} direction="row">
           <Button variant="contained" disabled={!isSelected}>
             사입요청하기

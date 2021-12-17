@@ -1,4 +1,6 @@
 import React from "react";
+import { useTable } from "react-table";
+import { columns } from "../data/columns";
 
 const Receiving = () => {
   return (

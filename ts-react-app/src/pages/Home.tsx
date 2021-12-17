@@ -6,6 +6,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Incomplete from "./Incomplete";
 import Receiving from "./Receiving";
+import { columns } from "../data/columns";
+import { rows } from "../data/rows";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
