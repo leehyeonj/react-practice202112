@@ -5,6 +5,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Incomplete from "./Incomplete";
+import Receiving from "./Receiving";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -63,7 +64,7 @@ export default function Home() {
         <Incomplete />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        hello two
+        <Receiving />
       </TabPanel>
       <TabPanel value={value} index={2}>
         hello Three

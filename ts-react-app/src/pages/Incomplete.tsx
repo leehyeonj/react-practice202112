@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import { DataGridPro } from "@mui/x-data-grid-pro";
 import { columns } from "../data/columns";
 import { rows } from "../data/rows";
+import { Box, Button, Stack } from "@mui/material";
 
 export default function Incomplete() {
   const columnData = useMemo(() => columns, [columns]);
@@ -12,6 +13,17 @@ export default function Incomplete() {
   return (
     <>
       <div style={{ height: 400, width: "100%" }}>
+        <Stack spacing={1} direction="row">
+          <Button variant="contained" disabled={!isSelected}>
+            사입요청하기
+          </Button>
+          <Button variant="contained" disabled={!isSelected}>
+            사입요청하기
+          </Button>
+          <Button variant="contained" disabled={!isSelected}>
+            사입요청하기
+          </Button>
+        </Stack>
         <DataGridPro
           rows={rowData}
           columns={columnData}
