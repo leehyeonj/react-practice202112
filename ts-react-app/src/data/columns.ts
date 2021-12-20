@@ -71,7 +71,7 @@ export const columns = [
     editable: true,
   },
   {
-    field: "OrderAmount",
+    field: "orderAmount",
     headerName: "오더 수",
     type: "number",
     width: 110,

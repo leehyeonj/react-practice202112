@@ -31,8 +31,7 @@ export default function Incomplete() {
           pageSize={5}
           rowsPerPageOptions={[5]}
           checkboxSelection
-          disableSelectionOnClick
-          isRowSelectable={(params: any) => params.row.OrderAmount > -1}
+          isRowSelectable={(params: any) => params.row.orderAmount > 1}
           initialState={{
             pinnedColumns: { left: ["orderDate"], right: ["age"] },
           }}
