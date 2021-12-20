@@ -6,8 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Incomplete from "./Incomplete";
 import Receiving from "./Receiving";
-import { columns } from "../data/columns";
-import { rows } from "../data/rows";
+import AgGrid from "./AgGrid";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -69,7 +68,7 @@ export default function Home() {
         <Receiving />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        hello Three
+        <AgGrid />
       </TabPanel>
       <TabPanel value={value} index={3}>
         hello four
