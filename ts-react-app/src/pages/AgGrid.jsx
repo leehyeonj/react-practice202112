@@ -59,7 +59,8 @@ const AgGrid = () => {
       <h2>This is ag grid</h2>
       <pre>
         1. 전체 select 2. select 후 버튼 able 3. 일부 데이터 select false 4.
-        컬럼 sticky
+        컬럼 sticky 5.column hide 6.editing 7.pivot 불필요한 컬럼 hide
+        8.grouping 9. row select control 전체선택, 부분선택
       </pre>
       <div>
         <Button variant="contained" disabled={!btnselection}>
@@ -77,12 +78,14 @@ const AgGrid = () => {
             minWidth: 100,
             headerCheckboxSelection: true,
             checkboxSelection: true,
+            suppressMovable: true,
+            editable: true,
           }}
           rowSelection="multiple"
           onSelectionChanged={onSelectionChanged}
           onGridReady={onGridReady}
         >
-          <AgGridColumn field="athlete" minWidth={150} />
+          <AgGridColumn field="athlete" minWidth={150} pinned="left" />
           <AgGridColumn field="age" maxWidth={90} />
           <AgGridColumn field="country" minWidth={150} />
           <AgGridColumn field="year" maxWidth={90} />

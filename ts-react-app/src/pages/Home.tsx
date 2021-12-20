@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import Incomplete from "./Incomplete";
 import Receiving from "./Receiving";
 import AgGrid from "./AgGrid";
+import ReactTableKitchenSink from "./ReactTableKitchenSink";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -71,7 +72,7 @@ export default function Home() {
         <AgGrid />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        hello four
+        <ReactTableKitchenSink />
       </TabPanel>
     </Box>
   );
