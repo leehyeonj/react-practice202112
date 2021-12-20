@@ -8,6 +8,7 @@ import Incomplete from "./Incomplete";
 import Receiving from "./Receiving";
 import AgGrid from "./AgGrid";
 import ReactTableKitchenSink from "./ReactTableKitchenSink";
+import RecoilPrc from "./RecoilPrc";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -72,7 +73,7 @@ export default function Home() {
         <AgGrid />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <ReactTableKitchenSink />
+        <RecoilPrc />
       </TabPanel>
     </Box>
   );
