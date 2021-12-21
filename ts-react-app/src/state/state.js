@@ -22,3 +22,8 @@ export const numberLabelState = selector({
     return `${number} 입니다`;
   },
 });
+
+export const myTodoState = atom({
+  key: "todoState",
+  default: [],
+});
