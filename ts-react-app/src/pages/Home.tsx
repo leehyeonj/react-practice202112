@@ -9,6 +9,8 @@ import Receiving from "./Receiving";
 import AgGrid from "./AgGrid";
 import ReactTableKitchenSink from "./ReactTableKitchenSink";
 import RecoilPrc from "./RecoilPrc";
+import MaterialTableEx from "./MaterialTable";
+import AgGridEdit from "./AgGridEdit";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -57,10 +59,12 @@ export default function Home() {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="미완료" {...a11yProps(0)} />
-          <Tab label="입고 작업중" {...a11yProps(1)} />
-          <Tab label="입고 확정" {...a11yProps(2)} />
-          <Tab label="전체" {...a11yProps(3)} />
+          <Tab label="mui-data grid" {...a11yProps(0)} />
+          <Tab label="react-table" {...a11yProps(1)} />
+          <Tab label="ag-grid" {...a11yProps(2)} />
+          <Tab label="material-table" {...a11yProps(3)} />
+          <Tab label="recoil" {...a11yProps(4)} />
+          <Tab label="ag edit" {...a11yProps(5)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -73,7 +77,13 @@ export default function Home() {
         <AgGrid />
       </TabPanel>
       <TabPanel value={value} index={3}>
+        <MaterialTableEx />
+      </TabPanel>
+      <TabPanel value={value} index={4}>
         <RecoilPrc />
+      </TabPanel>
+      <TabPanel value={value} index={5}>
+        <AgGridEdit />
       </TabPanel>
     </Box>
   );
