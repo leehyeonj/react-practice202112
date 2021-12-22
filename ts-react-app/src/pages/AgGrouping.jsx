@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AgGridColumn, AgGridReact } from "ag-grid-react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
-import { Box, Button, Stack } from "@mui/material";
+// import "ag-grid-enterprise";
 
 const GenderRenderer = (props) => {
   const image = props.value === "Male" ? "male.png" : "female.png";
@@ -19,35 +19,12 @@ const MoodRenderer = (props) => {
   return <div>mood</div>;
 };
 const AgGrouping = () => {
-  const [btnselection, setBtnSelection] = useState(false);
   const [gridApi, setGridApi] = useState(null);
   const [gridColumnApi, setGridColumnApi] = useState(null);
-  const [rowData, setRowData] = useState(null);
 
   const onGridReady = (params) => {
     setGridApi(params.api);
     setGridColumnApi(params.columnApi);
-  };
-
-  //선택했을때 나오는 메소드
-  const onSelectionChanged = (event) => {
-    var rowCount = event.api.getSelectedNodes().length;
-    if (rowCount > 0) {
-      setBtnSelection(true);
-    }
-    if (rowCount === 0) {
-      setBtnSelection(false);
-    }
-  };
-
-  const selectAllAmerican = () => {
-    gridApi.forEachNode(function (node) {
-      node.setSelected(node.data.country === "United States");
-    });
-  };
-
-  const selectData = (event) => {
-    console.log(event);
   };
 
   return (
@@ -82,12 +59,13 @@ const AgGrouping = () => {
               type: "mood",
             },
           ]}
-          defaultColDef={{ flex: 1 }}
+          defaultColDef={{ flex: 1, editable: true, sortable: true }}
           frameworkComponents={{
             genderCellRenderer: GenderRenderer,
             moodCellRenderer: MoodRenderer,
           }}
           onGridReady={onGridReady}
+          animateRows={true}
         >
           <AgGridColumn field="value" />
           <AgGridColumn

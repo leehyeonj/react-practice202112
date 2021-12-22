@@ -12,6 +12,7 @@ import RecoilPrc from "./RecoilPrc";
 import MaterialTableEx from "./MaterialTable";
 import AgGridEdit from "./AgGridEdit";
 import AgGrouping from "./AgGrouping";
+import AgEnterprise from "./AgEnterprise";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -69,7 +70,7 @@ export default function Home() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Incomplete />
+        <AgEnterprise />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Receiving />
