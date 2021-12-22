@@ -11,6 +11,7 @@ import ReactTableKitchenSink from "./ReactTableKitchenSink";
 import RecoilPrc from "./RecoilPrc";
 import MaterialTableEx from "./MaterialTable";
 import AgGridEdit from "./AgGridEdit";
+import AgGrouping from "./AgGrouping";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -64,7 +65,7 @@ export default function Home() {
           <Tab label="ag-grid" {...a11yProps(2)} />
           <Tab label="material-table" {...a11yProps(3)} />
           <Tab label="recoil" {...a11yProps(4)} />
-          <Tab label="ag edit" {...a11yProps(5)} />
+          <Tab label="ag group" {...a11yProps(5)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -83,7 +84,7 @@ export default function Home() {
         <RecoilPrc />
       </TabPanel>
       <TabPanel value={value} index={5}>
-        <AgGridEdit />
+        <AgGrouping />
       </TabPanel>
     </Box>
   );
