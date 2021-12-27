@@ -4,6 +4,7 @@ import Tabs, { tabsClasses } from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import AgGrid from "./pages/AgGrid";
+import Dealibird from "./pages/Dealibird";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -44,8 +45,8 @@ function App() {
             },
           }}
         >
-          <Tab label="Item One" />
-          <Tab label="Item Two" />
+          <Tab label="practice" />
+          <Tab label="재고 조회" />
           <Tab label="Item Three" />
           <Tab label="Item Four" />
           <Tab label="Item Five" />
@@ -57,7 +58,7 @@ function App() {
         <AgGrid />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <Dealibird />
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three
