@@ -5,6 +5,7 @@ import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 import "./styles.css";
 import Button from "@mui/material/Button";
 import axios from "axios";
+import SearchForm from "../components/SearchForm";
 
 const Dealibird = () => {
   const [gridApi, setGridApi] = useState(null);
@@ -44,6 +45,7 @@ const Dealibird = () => {
   };
   return (
     <>
+      <SearchForm />
       <div style={{ width: "100%", height: "100%" }}>
         <div
           id="myGrid"
@@ -53,7 +55,6 @@ const Dealibird = () => {
           }}
           className="ag-theme-alpine"
         >
-          <h1>editable table</h1>
           <div>
             <Button variant="contained" disabled={btndisabled}>
               엑셀받기
