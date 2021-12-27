@@ -64,6 +64,23 @@
       "undecided": 2,
       "deliveryOrder": 4,
       "deliveryProgress": 6
+    },
+    {
+      "id": 4,
+      "sellerName": "이차돌",
+      "SKU": "11111",
+      "buildingName": "디육트",
+      "wholeSaleName": "요작(16588)",
+      "wholeSaleProduct": "꼼정이",
+      "productName": "꼬미구제맨투맨/블랙/free",
+      "price": 1300,
+      "wholeStock": 10,
+      "dealibirdStock": 2,
+      "normalStock": 3,
+      "errorStock": 1,
+      "undecided": 2,
+      "deliveryOrder": 4,
+      "deliveryProgress": 6
     }
   ]
 }
