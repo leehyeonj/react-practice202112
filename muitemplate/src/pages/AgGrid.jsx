@@ -3,13 +3,14 @@ import { AgGridReact, AgGridColumn } from "ag-grid-react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 import "./styles.css";
+import Button from "@mui/material/Button";
 
 const AgGrid = () => {
-  console.log("ag grid");
   const [gridApi, setGridApi] = useState(null);
   const [gridColumnApi, setGridColumnApi] = useState(null);
   const [rowData, setRowData] = useState(null);
-
+  const [selectedRows, setSelectedRows] = useState([]);
+  const [btndisabled, setBtnDisabled] = useState(true);
   const onGridReady = (params) => {
     setGridApi(params.api);
     setGridColumnApi(params.columnApi);
@@ -21,9 +22,22 @@ const AgGrid = () => {
       .then((data) => updateData(data));
   };
 
+  const onSelectionChanged = () => {
+    const data = gridApi.getSelectedRows();
+
+    if (data.length > 0) {
+      setBtnDisabled(false);
+    } else {
+      setBtnDisabled(true);
+    }
+    setSelectedRows(gridApi.getSelectedRows());
+  };
+
+  const onCellValueChanged = (e) => {
+    console.log("changed", e.data);
+  };
   return (
     <>
-      <div>h2</div>
       <div style={{ width: "100%", height: "100%" }}>
         <div
           id="myGrid"
@@ -33,11 +47,22 @@ const AgGrid = () => {
           }}
           className="ag-theme-alpine"
         >
-          <h1>hello</h1>
+          <h1>editable table</h1>
+          <div>
+            <Button variant="contained" disabled={btndisabled}>
+              action1
+            </Button>
+            <Button variant="contained" disabled={btndisabled}>
+              action1
+            </Button>
+            <Button variant="contained" disabled={btndisabled}>
+              action1
+            </Button>
+          </div>
           <AgGridReact
             rowData={rowData}
             rowSelection={"multiple"}
-            suppressRowClickSelection={true}
+            suppressRowClickSelection={false}
             defaultColDef={{
               editable: true,
               sortable: true,
@@ -52,9 +77,13 @@ const AgGrid = () => {
               defaultToolPanel: "",
             }}
             onGridReady={onGridReady}
+            onSelectionChanged={onSelectionChanged}
+            onCellEditingStopped={(e) => {
+              onCellValueChanged(e);
+            }}
           >
             <AgGridColumn
-              headerName=""
+              headerName="..HELLO."
               headerCheckboxSelection={true}
               checkboxSelection={true}
               floatingFilter={false}
