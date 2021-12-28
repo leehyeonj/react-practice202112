@@ -5,26 +5,24 @@ import cn from "classnames";
 import "./menu.css";
 
 const SideMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   const paragraph =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet natus sint provident vel ab reprehenderit cum soluta, suscipit facere nisi sed earum repellendus fuga debitis, nam molestiae minima voluptates possimus.";
 
   const data = [
     {
-      title: "Pricing plans",
+      title: "재고",
       paragraph,
     },
     {
-      title: "How to apply",
+      title: "입고",
       paragraph,
     },
     {
-      title: "Purchasing process",
+      title: "환불",
       paragraph,
     },
     {
-      title: "Usage guides",
+      title: "반품",
       paragraph,
     },
   ];

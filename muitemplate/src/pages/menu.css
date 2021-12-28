@@ -62,7 +62,7 @@
   
   .accordionItem .inner-isopen {
     max-height: 1000px;
-    transition: all 0.3s ease-in-out;
+    transition: all 1s ease-in-out;
     overflow: hidden;
     text-transform: cubic-bezier(0.95, 0.05, 0.795, 0.035);
     transition-property: max-height 0.5s ease;
@@ -72,7 +72,7 @@
   .accordionItem .content {
     opacity: 0;
     transform: translateY(-1rem);
-    transition: opacity, transform 0.1s linear, ease 0.5s;
+    transition: opacity, transform 10s linear, ease 10s;
     padding: 0 1.2rem 1.2rem;
   }
   

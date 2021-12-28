@@ -10,6 +10,7 @@ import CellRendering from "./pages/CellRendering";
 import NivoPie from "./pages/NivoPie";
 import Emotion from "./pages/Emotion";
 import SideMenu from "./pages/SideMenu";
+import LottoMachine from "./pages/LottoMachine";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -89,7 +90,7 @@ function App() {
           <Tab label="cell render" />
           <Tab label="Nivo pie" />
           <Tab label="emotion" />
-          <Tab label="Item Seven" />
+          <Tab label="slide menu" />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -105,7 +106,7 @@ function App() {
         <CellRendering />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        {/* <NivoPie data={data} /> */}
+        <LottoMachine />
       </TabPanel>
       <TabPanel value={value} index={5}>
         <Emotion />
