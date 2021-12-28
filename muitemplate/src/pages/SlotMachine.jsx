@@ -9,7 +9,26 @@ const SlotMachine = () => {
   const [fruit3, setFruit3] = useState("🍒");
   const [rolling, setRolling] = useState(false);
   let slotRef = [useRef(null), useRef(null), useRef(null)];
-  const fruits = ["🍒", "🍉", "🍊", "🍓", "🍇", "🥝"];
+  const fruits = [
+    "🍒",
+    "🍉",
+    "🍊",
+    "🍓",
+    "🍇",
+    "🥝",
+    "🍒",
+    "🍉",
+    "🍊",
+    "🍓",
+    "🍇",
+    "🥝",
+    "🍒",
+    "🍉",
+    "🍊",
+    "🍓",
+    "🍇",
+    "🥝",
+  ];
 
   // to trigger roolling and maintain state
   const roll = () => {
@@ -56,8 +75,8 @@ const SlotMachine = () => {
       <div className="slot">
         <section>
           <div className="container" ref={slotRef[1]}>
-            {fruits.map((fruit) => (
-              <div>
+            {fruits.map((fruit, i) => (
+              <div key={i}>
                 <span>{fruit}</span>
               </div>
             ))}
@@ -67,8 +86,8 @@ const SlotMachine = () => {
       <div className="slot">
         <section>
           <div className="container" ref={slotRef[2]}>
-            {fruits.map((fruit) => (
-              <div>
+            {fruits.map((fruit, i) => (
+              <div key={i}>
                 <span>{fruit}</span>
               </div>
             ))}
@@ -77,7 +96,11 @@ const SlotMachine = () => {
       </div>
       <div
         className={!rolling ? "roll rolling" : "roll"}
-        onClick={!rolling && roll}
+        onClick={() => {
+          if (!rolling) {
+            roll();
+          }
+        }}
         disabled={rolling}
       >
         {rolling ? "Rolling..." : "ROLL"}

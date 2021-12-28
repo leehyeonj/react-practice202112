@@ -47,10 +47,10 @@ function App() {
             },
           }}
         >
-          <Tab label="practice" />
+          <Tab label="demo" />
           <Tab label="재고 조회" />
-          <Tab label="Item Three" />
-          <Tab label="Item Four" />
+          <Tab label="slot machine" />
+          <Tab label="cell render" />
           <Tab label="Item Five" />
           <Tab label="Item Six" />
           <Tab label="Item Seven" />
