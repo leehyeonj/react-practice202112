@@ -5,6 +5,8 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import AgGrid from "./pages/AgGrid";
 import Dealibird from "./pages/Dealibird";
+import SlotMachine from "./pages/SlotMachine";
+import CellRendering from "./pages/CellRendering";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -32,7 +34,7 @@ function App() {
   };
   return (
     <>
-      <Box sx={{ flexGrow: 1, maxWidth: 480, bgcolor: "background.paper" }}>
+      <Box sx={{ flexGrow: 1, maxWidth: 1000, bgcolor: "background.paper" }}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -61,7 +63,10 @@ function App() {
         <Dealibird />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <SlotMachine />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <CellRendering />
       </TabPanel>
     </>
   );
