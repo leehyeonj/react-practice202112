@@ -38,7 +38,6 @@ const AgeRenderer = (props) => {
 };
 
 const MyRenderer = (props) => {
-  console.log(props);
   return <span>{props.value} 입니다.</span>;
 };
 
