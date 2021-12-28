@@ -8,6 +8,7 @@ import Dealibird from "./pages/Dealibird";
 import SlotMachine from "./pages/SlotMachine";
 import CellRendering from "./pages/CellRendering";
 import NivoPie from "./pages/NivoPie";
+import Emotion from "./pages/Emotion";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -86,7 +87,7 @@ function App() {
           <Tab label="slot machine" />
           <Tab label="cell render" />
           <Tab label="Nivo pie" />
-          <Tab label="Item Six" />
+          <Tab label="emotion" />
           <Tab label="Item Seven" />
         </Tabs>
       </Box>
@@ -104,6 +105,9 @@ function App() {
       </TabPanel>
       <TabPanel value={value} index={4}>
         <NivoPie data={data} />
+      </TabPanel>
+      <TabPanel value={value} index={5}>
+        <Emotion />
       </TabPanel>
     </>
   );
