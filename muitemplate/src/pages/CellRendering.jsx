@@ -32,6 +32,15 @@ const GenderRenderer = (props) => {
     </span>
   );
 };
+const AgeRenderer = (props) => {
+  const age = props.value > 19 ? "adult🍕" : "child🍗";
+  return <span>{age}</span>;
+};
+
+const MyRenderer = (props) => {
+  console.log(props);
+  return <span>{props.value} 입니다.</span>;
+};
 
 const CellRendering = () => {
   const [gridApi, setGridApi] = useState(null);
@@ -84,6 +93,8 @@ const CellRendering = () => {
           frameworkComponents={{
             genderCellRenderer: GenderRenderer,
             moodCellRenderer: MoodRenderer,
+            myCellRenderer: MyRenderer,
+            ageCellRenderer: AgeRenderer,
           }}
           // onGridReady={onGridReady}
         >
@@ -105,6 +116,26 @@ const CellRendering = () => {
             }}
           />
           <AgGridColumn field="type" />
+          <AgGridColumn
+            headerName="my render"
+            field="value"
+            cellRendererSelector={(params) => {
+              const moodDetails = { component: "myCellRenderer" };
+              const genderDetails = {
+                component: "myCellRenderer",
+                params: {
+                  values: ["Male", "Femail"],
+                },
+              };
+              const ageDetails = {
+                component: "ageCellRenderer",
+              };
+              if (params.data.type === "gender") return genderDetails;
+              else if (params.data.type === "mood") return moodDetails;
+              else if (params.data.type === "age") return ageDetails;
+              else return undefined;
+            }}
+          />
         </AgGridReact>
       </div>
     </div>
