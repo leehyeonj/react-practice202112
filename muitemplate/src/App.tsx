@@ -9,6 +9,7 @@ import SlotMachine from "./pages/SlotMachine";
 import CellRendering from "./pages/CellRendering";
 import NivoPie from "./pages/NivoPie";
 import Emotion from "./pages/Emotion";
+import SideMenu from "./pages/SideMenu";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -104,10 +105,13 @@ function App() {
         <CellRendering />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <NivoPie data={data} />
+        {/* <NivoPie data={data} /> */}
       </TabPanel>
       <TabPanel value={value} index={5}>
         <Emotion />
+      </TabPanel>
+      <TabPanel value={value} index={6}>
+        <SideMenu />
       </TabPanel>
     </>
   );

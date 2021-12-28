@@ -8,8 +8,28 @@ const SlotMachine = () => {
   const [fruit2, setFruit2] = useState("🍒");
   const [fruit3, setFruit3] = useState("🍒");
   const [rolling, setRolling] = useState(false);
+
+  const [isWin, setIsWin] = useState(false);
   let slotRef = [useRef(null), useRef(null), useRef(null)];
   const fruits = [
+    "🍒",
+    "🍉",
+    "🍊",
+    "🍓",
+    "🍇",
+    "🥝",
+    "🍒",
+    "🍉",
+    "🍊",
+    "🍓",
+    "🍇",
+    "🥝",
+    "🍒",
+    "🍉",
+    "🍊",
+    "🍓",
+    "🍇",
+    "🥝",
     "🍒",
     "🍉",
     "🍊",
@@ -35,16 +55,22 @@ const SlotMachine = () => {
     setRolling(true);
     setTimeout(() => {
       setRolling(false);
-    }, 2000);
+    }, 3000);
 
     // looping through all 3 slots to start rolling
     slotRef.forEach((slot, i) => {
       // this will trigger rolling effect
+      console.log(i);
       const selected = triggerSlotRotation(slot.current);
-      if (i + 1 == 1) setFruit1(selected);
-      else if (i + 1 == 2) setFruit2(selected);
+      console.log(selected);
+      if (i === 0) setFruit1(selected);
+      else if (i === 1) setFruit2(selected);
       else setFruit3(selected);
     });
+    console.log(fruit1, fruit2, fruit3);
+    if ((fruit1 === fruit2) === fruit3) {
+      setIsWin(true);
+    }
   };
 
   // this will create a rolling effect and return random selected option
@@ -53,9 +79,13 @@ const SlotMachine = () => {
       ref.style.top = `${top}px`;
     }
     let options = ref.children;
+    console.log("options", options);
     let randomOption = Math.floor(Math.random() * fruits.length);
+    console.log("random", randomOption);
     let choosenOption = options[randomOption];
-    setTop(-choosenOption.offsetTop + 2);
+    console.log("chooseoptions", choosenOption);
+    console.log(choosenOption.offsetTop);
+    setTop(-choosenOption.offsetTop + 0.01);
     return fruits[randomOption];
   };
 

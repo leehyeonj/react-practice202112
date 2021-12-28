@@ -35,6 +35,8 @@ const loadingBox_circle = css`
   height: 100px;
   border-top: 10px solid green;
   animation: ${spinCircle} 8s ease infinite;
+  margin: 0 auto;
+  margin-top: 100px;
 `;
 
 const Emotion = () => {
