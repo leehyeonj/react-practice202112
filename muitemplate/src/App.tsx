@@ -7,6 +7,7 @@ import AgGrid from "./pages/AgGrid";
 import Dealibird from "./pages/Dealibird";
 import SlotMachine from "./pages/SlotMachine";
 import CellRendering from "./pages/CellRendering";
+import NivoPie from "./pages/NivoPie";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -32,6 +33,39 @@ function App() {
   ) => {
     setValue(newValue);
   };
+
+  const data = [
+    {
+      id: "php",
+      label: "php",
+      value: 397,
+      color: "hsl(118, 70%, 50%)",
+    },
+    {
+      id: "go",
+      label: "go",
+      value: 388,
+      color: "hsl(241, 70%, 50%)",
+    },
+    {
+      id: "scala",
+      label: "scala",
+      value: 311,
+      color: "hsl(213, 70%, 50%)",
+    },
+    {
+      id: "python",
+      label: "python",
+      value: 561,
+      color: "hsl(1, 70%, 50%)",
+    },
+    {
+      id: "hack",
+      label: "hack",
+      value: 590,
+      color: "hsl(197, 70%, 50%)",
+    },
+  ];
   return (
     <>
       <Box sx={{ flexGrow: 1, maxWidth: 1000, bgcolor: "background.paper" }}>
@@ -51,7 +85,7 @@ function App() {
           <Tab label="재고 조회" />
           <Tab label="slot machine" />
           <Tab label="cell render" />
-          <Tab label="Item Five" />
+          <Tab label="Nivo pie" />
           <Tab label="Item Six" />
           <Tab label="Item Seven" />
         </Tabs>
@@ -67,6 +101,9 @@ function App() {
       </TabPanel>
       <TabPanel value={value} index={3}>
         <CellRendering />
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        <NivoPie data={data} />
       </TabPanel>
     </>
   );
