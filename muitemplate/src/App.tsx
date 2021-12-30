@@ -28,6 +28,7 @@ function TabPanel(props: any) {
   );
 }
 function App() {
+  console.log("dxd");
   const [value, setValue] = React.useState(0);
 
   const handleChange = (
