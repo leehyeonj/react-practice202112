@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
 import "./styles.css";
 const LottoMachine = () => {
-  const [fruit1, setFruit1] = useState("🍒");
-  const [fruit2, setFruit2] = useState("🍒");
-  const [fruit3, setFruit3] = useState("🍒");
+  const [fruit1, setFruit1] = useState("");
+  const [fruit2, setFruit2] = useState("");
+  const [fruit3, setFruit3] = useState("");
   const [rolling, setRolling] = useState(false);
 
   const [isWin, setIsWin] = useState(false);
