@@ -11,6 +11,7 @@ import NivoPie from "./pages/NivoPie";
 import Emotion from "./pages/Emotion";
 import SideMenu from "./pages/SideMenu";
 import LottoMachine from "./pages/LottoMachine";
+import Moment from "./pages/Moment";
 
 function TabPanel(props: any) {
   const { children, value, index, ...other } = props;
@@ -92,6 +93,7 @@ function App() {
           <Tab label="Nivo pie" />
           <Tab label="emotion" />
           <Tab label="slide menu" />
+          <Tab label="date package" />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -114,6 +116,9 @@ function App() {
       </TabPanel>
       <TabPanel value={value} index={6}>
         <SideMenu />
+      </TabPanel>
+      <TabPanel value={value} index={7}>
+        <Moment />
       </TabPanel>
     </>
   );
